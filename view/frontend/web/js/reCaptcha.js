@@ -29,7 +29,8 @@ define(
         return Component.extend({
 
             defaults: {
-                template: 'MSP_ReCaptcha/reCaptcha'
+                template: 'MSP_ReCaptcha/reCaptcha',
+                reCaptchaId: 'msp-recaptcha'
             },
             _isApiRegistered: undefined,
 
@@ -85,10 +86,7 @@ define(
              * @returns {Boolean}
              */
             getIsInvisibleRecaptcha: function () {
-                if (this.settings.size !== 'invisible') {
-                    return true;
-                }
-                return false;
+                return this.settings.size !== 'invisible';
             },
 
             /**
@@ -182,7 +180,6 @@ define(
                 if (this.settings.size !== 'invisible') {
                     return $(document).find('input[type=checkbox].required-captcha').prop( "checked", state );
                 }
-                return;
             },
 
             /**
@@ -207,10 +204,6 @@ define(
              * @returns {String}
              */
             getReCaptchaId: function () {
-                if (!this.reCaptchaId) {
-                    return 'msp-recaptcha';
-                }
-
                 return this.reCaptchaId;
             }
         });
