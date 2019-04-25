@@ -198,13 +198,7 @@
                  type="MSP\ReCaptcha\Model\Provider\Failure\ObserverRedirectFailure">
         <arguments>
             <argument name="redirectUrlProvider"
-                      xsi:type="object">MSP\ReCaptcha\Model\Provider\Failure\RedirectUrl\SendFriendForm</argument>
-        </arguments>
-    </virtualType>
-    <virtualType name="MSP\ReCaptcha\Model\Provider\Failure\RedirectUrl\SendFriendForm"
-                 type="MSP\ReCaptcha\Model\Provider\Failure\RedirectUrl\SimpleUrlProvider">
-        <arguments>
-            <argument name="urlPath" xsi:type="string">*/*/send</argument>
+                      xsi:type="object">MSP\ReCaptcha\Model\Provider\Failure\RedirectUrl\ReferrerUrlProvider</argument>
         </arguments>
     </virtualType>
 
